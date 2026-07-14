@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suli's Gamemodes Loading Screen</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: #121316;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            width: 100vw;
+        }
+
+        /* Subtle radial background vignette to mimic classic game menus */
+        .bg-overlay {
+            background: radial-gradient(circle at center, rgba(34, 40, 49, 0.4) 0%, rgba(10, 11, 14, 0.95) 100%);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Main Center Wrapper */
+        .container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Accurate Garry's Mod "g" Tile Style Logo */
+        .logo-box {
+            align-items: center;
+            /* Classic GMod Blueprint Blue-Grey gradient */
+            background: linear-gradient(135deg, #242933 0%, #151921 100%);
+            border-radius: 28px;
+            border: 6px solid #ffffff;
+            /* Heavy dropped outer shadows and crisp inner bezel */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 
+                        inset 0 4px 8px rgba(255, 255, 255, 0.15),
+                        0 0 0 2px rgba(0, 0, 0, 0.5);
+            display: flex;
+            height: 130px;
+            justify-content: center;
+            margin-bottom: 35px;
+            /* Authentic tilted angle match */
+            transform: rotate(-10deg); 
+            width: 130px;
+        }
+
+        /* The Bold "S" Inside the Tile */
+        .logo-text {
+            color: #ffffff;
+            font-family: 'Arial Black', Impact, sans-serif;
+            font-size: 105px;
+            font-weight: 900;
+            line-height: 1;
+            /* Slightly offset to give it the classic stylized depth */
+            margin-top: -12px;
+            text-shadow: 4px 5px 0px #090a0d;
+        }
+
+        /* Main Server Title */
+        .main-title {
+            color: #ffffff;
+            font-family: 'Arial Black', Impact, sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+            text-transform: uppercase;
+        }
+
+        /* Subtitle Text */
+        .sub-title {
+            color: #d1d5db;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin-top: 20px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+        }
+
+        /* Engine Loading Hook Layout */
+        .loading-footer {
+            bottom: 60px;
+            position: absolute;
+            width: 100%;
+        }
+
+        .status-text {
+            color: #9ca3af;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Clean Loading Bar */
+        .progress-bar-container {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            height: 5px;
+            margin: 0 auto;
+            max-width: 450px;
+            overflow: hidden;
+            width: 85%;
+        }
+
+        .progress-fill {
+            background-color: #ffffff;
+            height: 100%;
+            transition: width 0.3s ease;
+            width: 10%; /* Server initialization placeholder state */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+        <!-- Garry's Mod Blueprint-Style Tilt Logo Box -->
+        <div class="logo-box">
+            <span class="logo-text">s</span>
+        </div>
+
+        <!-- Middle Server Heading -->
+        <h1 class="main-title">Suli's Gamemodes</h1>
+        <h2 class="sub-title">Deathrun &bull; TTT &bull; Prophunt &bull; Guess Who</h2>
+
+        <!-- Native GMod Asset Downloader Hooks -->
+        <div class="loading-footer">
+            <div id="status" class="status-text">Loading Addons & Textures...</div>
+            <div class="progress-bar-container">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active GMod Downloader System Integrations -->
+    <script type="text/javascript">
+        // Real-time tracking of files currently being installed by client
+        function SetStatusChanged(status) {
+            var statusDiv = document.getElementById('status');
+            if (statusDiv) {
+                statusDiv.innerHTML = status;
+            }
+        }
+
+        // Dynamically increments the visual white bar progress
+        function SetFilesTotal(total) {
+            window.totalFiles = total;
+        }
+
+        function SetFilesNeeded(needed) {
+            if (!window.totalFiles || window.totalFiles === 0) return;
+            var progressDiv = document.getElementById('progress');
+            if (progressDiv) {
+                var downloaded = window.totalFiles - needed;
+                var percentage = (downloaded / window.totalFiles) * 100;
+                progressDiv.style.width = percentage + '%';
+            }
+        }
+    </script>
+</body>
+</html>
