@@ -13,91 +13,110 @@
 }
 
 body {
-    background: #121316;
-    color: white;
+    background-color: #121316;
+    color: #ffffff;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 .bg-overlay {
+    background: radial-gradient(circle at center, rgba(34, 40, 49, 0.4) 0%, rgba(10, 11, 14, 0.95) 100%);
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(34,40,49,0.5), rgba(10,11,14,0.95));
-    z-index: -1;
 }
 
 .container {
+    position: relative;
+    z-index: 2;
     width: 850px;
     max-width: 90%;
-    margin: 50px auto;
+    margin: auto;
+    padding: 50px 0;
     text-align: center;
 }
 
-/* Logo */
 .logo-box {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, #242933, #151921);
-    border: 5px solid white;
-    border-radius: 22px;
-    transform: rotate(-10deg);
-    display: flex;
     align-items: center;
-    justify-content: center;
+    background: linear-gradient(135deg, #242933 0%, #151921 100%);
+    border-radius: 22px;
+    border: 5px solid #ffffff;
     box-shadow:
-        0 15px 35px rgba(0,0,0,.7),
-        inset 0 4px 8px rgba(255,255,255,.15);
+        0 15px 35px rgba(0,0,0,0.7),
+        inset 0 4px 8px rgba(255,255,255,0.15);
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    margin: 0 auto 30px;
+    transform: rotate(-10deg);
+    width: 100px;
 }
 
 .logo {
-    font-family: Impact, Arial Black, sans-serif;
+    color: white;
+    font-family: 'Arial Black', Impact, sans-serif;
     font-size: 80px;
     font-weight: 900;
     text-shadow: 4px 5px #090a0d;
 }
 
 h1 {
-    font-family: Impact, Arial Black, sans-serif;
+    font-family: 'Arial Black', Impact, sans-serif;
     font-size: 55px;
     text-transform: uppercase;
     text-shadow: 0 4px 12px black;
 }
 
 .subtitle {
-    margin-top: 15px;
     color: #d1d5db;
-    letter-spacing: 4px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-top: 15px;
 }
 
 .card {
-    margin-top: 35px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 35px;
     padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.5);
 }
 
 h2 {
     font-size: 22px;
-    margin-bottom: 15px;
     letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 p {
     color: #d1d5db;
-    line-height: 1.8;
     font-size: 16px;
+    line-height: 1.8;
+}
+
+.discord {
+    background: white;
+    border-radius: 8px;
+    color: #121316;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    padding: 12px 25px;
+    text-decoration: none;
+}
+
+.discord:hover {
+    opacity: 0.8;
 }
 
 .highlight {
     color: white;
     font-weight: bold;
 }
+
 </style>
 </head>
 
@@ -107,59 +126,57 @@ p {
 
 <div class="container">
 
-<div class="logo-box">
-    <div class="logo">S</div>
-</div>
+    <div class="logo-box">
+        <div class="logo">S</div>
+    </div>
 
-<h1>Suli's Gamemodes</h1>
+    <h1>Suli's Gamemodes</h1>
 
-<div class="subtitle">
-DEATHRUN • TTT • PROP HUNT • GUESS WHO
-</div>
-
-
-<div class="card">
-<h2>🎮 Welcome</h2>
-
-<p>
-Welcome to <span class="highlight">Suli's Gamemodes</span>!
-<br>
-Classic Garry's Mod round-based fun.
-</p>
-</div>
+    <div class="subtitle">
+        DEATHRUN • TTT • PROP HUNT • GUESS WHO
+    </div>
 
 
-<div class="card">
-<h2>📜 Rules</h2>
-
-<p>
-• No cheating or exploiting<br>
-• Respect other players<br>
-• No spam or mic abuse<br>
-• Don't ruin rounds<br>
-• Have fun!
-</p>
-</div>
+    <div class="card">
+        <h2>🎮 Welcome</h2>
+        <p>
+            Welcome to <span class="highlight">Suli's Gamemodes</span>!<br>
+            Classic Garry's Mod round-based fun.
+        </p>
+    </div>
 
 
-<div class="card">
-<h2>💡 Tips</h2>
+    <div class="card">
+        <h2>📜 Rules</h2>
+        <p>
+            • No cheating or exploiting<br>
+            • Respect other players<br>
+            • No spam or mic abuse<br>
+            • Don't ruin rounds<br>
+            • Have fun!
+        </p>
+    </div>
 
-<p>
-Use <span class="highlight">!rtv</span> to vote for a new map.
-<br>
-Invite friends and help the server grow!
-</p>
-</div>
+
+    <div class="card">
+        <h2>💡 Tips</h2>
+        <p>
+            Use <span class="highlight">!rtv</span> to vote for a new map.<br>
+            Play with friends and help the server grow!
+        </p>
+    </div>
 
 
-<div class="card">
-<h2>🌐 Community</h2>
+    <div class="card">
+        <h2>🌐 Community</h2>
+        <p>
+            Join our Discord for updates, events, and announcements.
+        </p>
 
-<p>
-Join our Discord for updates, events, and announcements.
-</p>
-</div>
+        <a class="discord" href="https://discord.gg/AArFNhnBEy">
+            JOIN DISCORD
+        </a>
+    </div>
 
 </div>
 
